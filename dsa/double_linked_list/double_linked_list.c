@@ -128,6 +128,31 @@ void print(Node * head)
   printf("\n");
 }
 
+void printRecursion(Node * node)
+{
+  printf("%d ", node->data);
+  if (node->next == NULL)
+  {
+    printf("\n");
+    return;
+  }
+  printRecursion(node->next);
+}
+
+void printRecursionReverse(Node * node)
+{
+  if (node == NULL)
+  {
+    return;
+  }
+  printRecursionReverse(node->next);
+  printf("%d ", node->data);
+  if (node->prev == NULL)
+  {
+    printf("\n");
+  }
+}
+
 int main()
 {
   Node * node = NULL;
@@ -140,5 +165,7 @@ int main()
   print(node);
   node = reverseRecursion(node);
   print(node);
+  printRecursion(node);
+  printRecursionReverse(node);
   return 0;
 }
