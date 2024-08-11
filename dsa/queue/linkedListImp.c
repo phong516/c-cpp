@@ -29,6 +29,11 @@ int main(void)
   print(queue);
   enQueue(&queue, 3);
   print(queue);
+  deQueue(&queue);
+  deQueue(&queue);
+  print(queue);
+  deQueue(&queue);
+  print(queue);
   return 0;
 }
 
